@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # بارگذاری .env
+if os.getenv("RAILWAY_ENVIRONMENT") is None:
+    load_dotenv() # بارگذاری .env
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = os.getenv("ALGORITHM")

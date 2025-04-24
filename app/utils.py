@@ -11,15 +11,15 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 token_header = APIKeyHeader(name="Authorization")
 
-ACCESS_TOKEN_EXPIRE_MINUTES = get_access_token_expire_minutes()
-SECRET_KEY = get_secret_key()
-ALGORITHM = get_algorithm()
 
 def hash_password(password: str):
     return pwd_context.hash(password)
 
 
 def create_access_token(data: dict):
+    SECRET_KEY = get_secret_key()
+    ALGORITHM = get_algorithm()
+    ACCESS_TOKEN_EXPIRE_MINUTES = get_access_token_expire_minutes()
     to_encode = data.copy()
     expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     to_encode.update({"exp": expire})

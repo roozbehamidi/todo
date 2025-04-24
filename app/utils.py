@@ -1,7 +1,7 @@
 from passlib.context import CryptContext
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
-from app.core.config import SECRET_KEY, ALGORITHM
+from app.core.config import get_secret_key, get_algorithm,get_access_token_expire_minutes()
 from fastapi.security import OAuth2PasswordBearer,APIKeyHeader
 from fastapi import Security
 from fastapi import Depends, HTTPException, status
@@ -11,8 +11,9 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 token_header = APIKeyHeader(name="Authorization")
 
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
-
+ACCESS_TOKEN_EXPIRE_MINUTES = get_access_token_expire_minutes()
+SECRET_KEY = get_secret_key()
+ALGORITHM = get_algorithm()
 
 def hash_password(password: str):
     return pwd_context.hash(password)

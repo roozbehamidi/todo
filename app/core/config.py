@@ -1,14 +1,27 @@
 import os
 
+# فقط در حالت لوکال فایل .env رو لود کن
 if os.getenv("RAILWAY_ENVIRONMENT") is None:
     from dotenv import load_dotenv
     load_dotenv()
 
+# این تابع مقدار DATABASE_URL رو فقط زمانی می‌گیره که واقعا نیاز باشه
 def get_database_url():
-    return os.getenv("DATABASE_URL")
+    db_url = os.getenv("DATABASE_URL")
+    if not db_url:
+        raise ValueError("❌ DATABASE_URL is not set!")
+    return db_url
 
-SECRET_KEY = os.getenv("SECRET_KEY")
-ALGORITHM = os.getenv("ALGORITHM")
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
-DATABASE_URL = os.getenv("DATABASE_URL")
+def get_secret_key():
+    key = os.getenv("SECRET_KEY")
+    if not key:
+        raise ValueError("❌ SECRET_KEY is not set!")
+    return key
+
+def get_algorithm():
+    return os.getenv("ALGORITHM", "HS256")
+
+def get_access_token_expire_minutes():
+    return int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
+
 

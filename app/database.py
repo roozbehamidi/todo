@@ -3,11 +3,12 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from app.core.config import DATABASE_URL
 #DATABASE_URL = "sqlite:///todo.db"
 
-# بررسی اینکه از چه دیتابیس استفاده می‌کنیم
+assert DATABASE_URL is not None, "❌ DATABASE_URL is not set!"
+
 if DATABASE_URL.startswith("sqlite"):
     engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 else:
-    engine = create_engine(DATABASE_URL)  # برای Postgr
+    engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()

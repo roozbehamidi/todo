@@ -1,7 +1,7 @@
 from passlib.context import CryptContext
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
-from app.core.config import get_secret_key, get_algorithm,get_access_token_expire_minutes()
+from app.core.config import get_secret_key, get_algorithm,get_access_token_expire_minutes
 from fastapi.security import OAuth2PasswordBearer,APIKeyHeader
 from fastapi import Security
 from fastapi import Depends, HTTPException, status

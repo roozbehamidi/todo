@@ -1,12 +1,11 @@
 from fastapi import FastAPI
 from app.routers import auth, todo
-import uvicorn
-from app.database import init_engine
 
-app = FastAPI(title="TODO API")
+app = FastAPI()
 
 @app.on_event("startup")
 async def startup_event():
+    from app.database import init_engine
     init_engine()
 
 app.include_router(auth.router)

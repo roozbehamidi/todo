@@ -1,6 +1,6 @@
 import os
 
-if os.getenv("RAILWAY_ENVIRONMENT") is None:
+if os.getenv("RAILWAY_ENVIRONMENT_NAME") is None:
     from dotenv import load_dotenv
     load_dotenv()
 

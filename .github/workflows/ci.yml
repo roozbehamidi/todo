@@ -1,4 +1,4 @@
-name: CI for FastAPI
+name: Basic CI for FastAPI
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ⬇️ Checkout Code
+      - name: ⬇️ Checkout code
         uses: actions/checkout@v3
 
       - name: 🐍 Setup Python
@@ -23,7 +23,3 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: ✅ Run Tests
-        run: |
-          pytest

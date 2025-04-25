@@ -1,8 +1,8 @@
 import os
 
 #if os.getenv("RAILWAY_ENVIRONMENT_NAME") is None:
-from dotenv import load_dotenv
-load_dotenv()
+    #from dotenv import load_dotenv
+    #load_dotenv()
 
 def get_database_url():
     value = os.getenv("DATABASE_URL")

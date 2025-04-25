@@ -1,2 +1,2 @@
-from app.models.user import User
-from app.models.todo import Todo  # ایمپورت همه مدل‌ها اینجا
+from app.models.user import User # noqa: F401
+from app.models.todo import Todo # noqa: F401

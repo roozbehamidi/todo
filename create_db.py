@@ -1,7 +1,7 @@
 # create_db.py
 
 from app.database import Base, engine
-import app.models  # باعث می‌شه user لود بشه و جدول ثبت بشه
+import app.models  # noqa: F401
 
 Base.metadata.create_all(bind=engine)
 

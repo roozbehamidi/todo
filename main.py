@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import auth, todo
+
 
 app = FastAPI()
 
@@ -7,7 +7,7 @@ app = FastAPI()
 async def startup_event():
     from app.database import init_engine
     init_engine()
-
-app.include_router(auth.router)
-app.include_router(todo.router)
+    from app.routers import auth, todo
+    app.include_router(auth.router)
+    app.include_router(todo.router)
 

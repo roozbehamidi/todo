@@ -1,62 +1,85 @@
-📝 پروژه Todo App - FastAPI Backend
-✨ توضیح کلی پروژه
-این پروژه یک اپلیکیشن مدیریت کارها (Todo App) است که با استفاده از تکنولوژی‌های زیر توسعه داده شده:
+# 📝 Todo App Project – FastAPI Backend
 
-FastAPI برای توسعه‌ی API
+## ✨ Project Summary
 
-PostgreSQL به عنوان دیتابیس
+The Todo App is a task management application designed with a focus on modern backend development practices. It leverages the following technologies:
 
-Docker برای مدیریت محیط توسعه
+- **FastAPI** for high-performance API development
+- **PostgreSQL** as a robust relational database
+- **Docker** for environment containerization and management
+- **Railway** for seamless, automated deployment
+- **GitHub Actions** for continuous integration and delivery (CI/CD)
 
-Railway برای دیپلوی خودکار
+## 🛠️ Technologies and Tools
 
-GitHub Actions برای CI/CD اتوماتیک
+- Python  
+- FastAPI  
+- Docker  
+- PostgreSQL  
+- Git  
 
-🛠️ تکنولوژی‌ها و ابزارهای استفاده شده
-<div align="center"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" height="40" alt="Python"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" width="40" height="40" alt="FastAPI"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="40" height="40" alt="Docker"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" height="40" alt="PostgreSQL"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" height="40" alt="Git"/> </div>
-🚀 دموی آنلاین پروژه
-🔗 مشاهده‌ی نسخه زنده‌ی Todo App
+## 🚀 Live Demo
 
-🏗️ ویژگی‌های اصلی
-ثبت نام کاربر (User Registration)
+🔗 [Access the Live Todo App](#)
 
-ورود با توکن JWT (Login with JWT)
+## 🏗️ Main Features
 
-مدیریت تسک‌های شخصی (Create / Read / Update / Delete Todos)
+- Secure user registration
+- Authentication and login via JWT tokens
+- Full CRUD operations for personal task management
+- Task filtering based on completion status (Completed / Not Completed)
+- OAuth2 Bearer Token authentication for API security
+- Automated database schema generation with SQLAlchemy
+- Full CI/CD workflow with GitHub Actions and automated deployment to Railway
+- Codebase formatted and linted according to best practices using Ruff
 
-فیلتر تسک‌ها بر اساس وضعیت تکمیل (Completed / Not Completed)
+## 🛠️ Running Locally (Development Setup)
 
-امنیت API با احراز هویت (OAuth2 Bearer Token)
-
-ساخت خودکار جداول در دیتابیس با SQLAlchemy
-
-پیاده‌سازی CI/CD با GitHub Actions و دیپلوی خودکار روی Railway
-
-کد مرتب با فرمت استاندارد توسط Ruff
-
-🛠️ نحوه اجرا در محیط توسعه
-bash
-Copy
-Edit
-# کلون کردن پروژه
+```bash
+# Clone the repository
 git clone https://github.com/roozbehamidi/todo.git
 
-# نصب وابستگی‌ها
+# Install project dependencies
 pip install -r requirements.txt
 
-# اجرای پروژه
+# Launch the application
 uvicorn main:app --reload
-📦 داکرایز کردن پروژه
-bash
-Copy
-Edit
-# ساخت ایمیج
+```
+📦 Docker Setup
+```bash
+# Build the Docker image
 docker build -t todo-app .
 
-# ران کردن کانتینر
+# Run the Docker container
 docker run -d -p 8000:8000 todo-app
-📊 آمار گیت‌هاب من
-![Roozbeh's GitHub stats](https://github-readme-stats.vercel.app/api?username=roozbehamidi&show_icons=true&theme=radical)
+```
+📁 Project Structure
+```bash
+todo/
+├── app/
+│   ├── auth/             # Authentication and security (JWT, OAuth2)
+│   ├── crud/             # CRUD operations for todos and users
+│   ├── db/               # Database models and initialization
+│   ├── schemas/          # Pydantic models for request and response validation
+│   ├── main.py           # Application entry point
+│   └── config.py         # Configuration settings
+├── Dockerfile            # Docker configuration
+├── requirements.txt      # Python dependencies
+├── .github/workflows/    # GitHub Actions CI/CD workflows
+└── README.md             # Project documentation
+```
+🚀 Future Improvements
+Add password reset functionality via email
 
-✨ تشکر بابت بازدید!
-اگر پروژه رو دوست داشتی، ستاره بده! ⭐️
+Implement user roles and permissions
+
+Create an admin dashboard interface
+
+Add rate-limiting and API usage monitoring
+
+Improve test coverage with automated unit and integration tests
+
+Implement WebSocket support for real-time task updates
+
+✨ Thank You!
+If you find this project useful or interesting, please consider giving it a ⭐️ on GitHub!

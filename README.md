@@ -1,3 +1,8 @@
+![Deploy](https://img.shields.io/github/actions/workflow/status/roozbehamidi/todo/deploy.yml?branch=main&label=Deployment)
+![CI](https://img.shields.io/github/actions/workflow/status/roozbehamidi/todo/tests.yml?branch=main&label=Tests)
+![Last Commit](https://img.shields.io/github/last-commit/roozbehamidi/todo)
+![Language](https://img.shields.io/github/languages/top/roozbehamidi/todo)
+![Stars](https://img.shields.io/github/stars/roozbehamidi/todo?style=social)
 # 📝 Todo App Project – FastAPI Backend
 
 ## ✨ Project Summary

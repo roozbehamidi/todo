@@ -29,4 +29,6 @@ email-validator
 psycopg2-binary
 pytest
 ruff
+celery[redis]
+
 
